@@ -1,3 +1,13 @@
 body {
 	text-align: center;
+	background-image: url(http://canacopegdl.com/images/greyish/greyish-8.jpg);
+}
+h2 {
+	background-color: #171717;
+	height: 5%;
+	width: 15%;
+	margin: 0 auto;
+	color: white;
+	padding:2%;
+	font-size: 30px;
 }
