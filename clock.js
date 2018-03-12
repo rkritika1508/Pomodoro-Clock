@@ -6,19 +6,36 @@ var minBreakPlus = document.querySelector(".breakPlus");
 var minBreakMinus = document.querySelector(".breakMinus");
 var minSessionDisplay = document.querySelector(".sessionDisplay");
 var minBreakDisplay = document.querySelector(".breakDisplay");
+var stopBtn = document.querySelector("#stop");
+var startBtn = document.querySelector("#start");
+var resetBtn = document.querySelector("#reset");
+function minSesDisplay(){
+	minSessionDisplay.textContent = minSession;
+}
+function minBrDisplay(){
+	minBreakDisplay.textContent = minBreak;
+}
+
 minSessionPlus.addEventListener("click",function(){
 	minSession++;
-	minSessionDisplay.textContent = minSession;
+	minSesDisplay();
 })
 minSessionMinus.addEventListener("click", function(){
 	minSession--;
-	minSessionDisplay.textContent = minSession;
+	minSesDisplay();
 })
 minBreakPlus.addEventListener("click", function(){
-	minBreak++;
-	minBreakDisplay.textContent = minBreak;
+	minBreak++;	
+	minBrDisplay();
 })
 minBreakMinus.addEventListener("click", function(){
 	minBreak--;
-	minBreakDisplay.textContent = minBreak;
+	minBrDisplay();
+})
+
+resetBtn.addEventListener("click", function(){
+	minSession=25;
+	minBreak = 5;
+	minSesDisplay();
+	minBrDisplay();
 })
