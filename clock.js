@@ -41,6 +41,7 @@ resetBtn.addEventListener("click", function(){
 	minBrDisplay();
 })
 timer.textContent = minSession + ":" + 00;
+var t;
 function startTimer(){
 	var presentTime = timer.textContent;
 	var timeArray = presentTime.split(/[:]+/);
@@ -49,13 +50,19 @@ function startTimer(){
 	if(s==59){m=m-1}
   	if(m<0){alert('timer completed')}
 	timer.textContent = m + ":" + s;
-	setTimeout(startTimer, 1000);
+	t = setTimeout(startTimer, 1000);
 }
 function checkSecond(sec) {
   if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
   if (sec < 0) {sec = "59"};
   return sec;
 }
+function stopTimer() {
+    clearTimeout(t);
+}
 startBtn.addEventListener("click", function(){
 	startTimer();
+})
+stopBtn.addEventListener("click", function(){
+	stopTimer();
 })
