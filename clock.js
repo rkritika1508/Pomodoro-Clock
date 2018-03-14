@@ -20,27 +20,33 @@ function minBrDisplay(){
 minSessionPlus.addEventListener("click",function(){
 	minSession++;
 	minSesDisplay();
+	timer.textContent = minSession + ":00"
 })
 minSessionMinus.addEventListener("click", function(){
 	minSession--;
 	minSesDisplay();
+	timer.textContent = minSession + ":00"
 })
 minBreakPlus.addEventListener("click", function(){
 	minBreak++;	
 	minBrDisplay();
+	timer.textContent = minSession + ":00"
 })
 minBreakMinus.addEventListener("click", function(){
 	minBreak--;
 	minBrDisplay();
+	timer.textContent = minSession + ":00"
 })
 
 resetBtn.addEventListener("click", function(){
+	stopTimer();
 	minSession=25;
 	minBreak = 5;
 	minSesDisplay();
 	minBrDisplay();
+	timer.textContent = minSession + ":00";
 })
-timer.textContent = minSession + ":" + 00;
+timer.textContent = minSession + ":" + "00";
 var t;
 function startTimer(){
 	var presentTime = timer.textContent;
